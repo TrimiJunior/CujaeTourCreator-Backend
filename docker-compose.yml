@@ -1,0 +1,105 @@
+version: '3.7'
+
+services:
+  app:
+    image: app_tourCreator:v1
+    container_name: app_tourCreator
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    env_file: .env  
+    ports:
+      - 80:5000
+    depends_on:
+       - mongodb
+       - rabbitmq
+    restart: always
+    networks:
+      - ms_nestjs
+  
+  microservices-linkHostpots:
+    image: microservices-linkHostpots:v1
+    container_name: microservices-linkHostpots
+    build:
+      context: ./microservices-linkHostpots
+      dockerfile: Dockerfile
+    env_file: .env 
+    depends_on:
+      - mongodb
+      - rabbitmq 
+    restart: always
+    networks:
+      - ms_nestjs      
+  
+  microservices-projects:
+    image: microservices-projects:v2
+    container_name: microservices-projects
+    build:
+      context: ./microservices-projects
+      dockerfile: Dockerfile
+    env_file: .env  
+    depends_on:
+      - mongodb
+      - rabbitmq
+    restart: always
+    networks:
+      - ms_nestjs   
+
+  microservices-scenes:
+    image: microservices-scenes:v1
+    container_name: microservices-scenes
+    build:
+      context: ./microservices-scenes
+      dockerfile: Dockerfile
+    env_file: .env  
+    depends_on:
+      - mongodb
+      - rabbitmq
+    restart: always
+    networks:
+      - ms_nestjs     
+  
+  microservices-users:
+    image: microservices-users:v2
+    container_name: microservices-users
+    build:
+      context: ./microservices-users
+      dockerfile: Dockerfile
+    env_file: .env  
+    depends_on:
+      - mongodb
+      - rabbitmq
+    restart: always
+    networks:
+      - ms_nestjs     
+  
+  rabbitmq:
+    image: docker.uclv.cu/rabbitmq:3-management
+    container_name: rmq
+    expose:
+      - 5672
+      - 15672
+    restart: always
+    networks:
+      - ms_nestjs
+  
+  mongodb:
+    image: docker.uclv.cu/mongo:latest
+    container_name: mongodb
+    restart: always
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - mongodb/data/db
+    expose:
+      - 27017
+    networks:
+      - ms_nestjs
+
+volumes:
+  mongodb:     
+
+networks:
+    ms_nestjs:
+      

@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "start-all": "cd microservices-infoHostpots && npm start & cd microservices-linkHostpots && npm start & cd microservices-projects && npm start & cd microservices-scenes && npm start & cd microservices-users && npm start & cd api-gateway && npm start"
+    }
+  }
+  
+  
+  
