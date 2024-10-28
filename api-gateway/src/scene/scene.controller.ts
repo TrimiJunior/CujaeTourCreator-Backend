@@ -44,7 +44,7 @@ export class SceneController {
   @Post()
   create(@Body() sceneDTO: SceneDTO,@UploadedFile() file: Express.Multer.File): Observable<IScene> {
     const __dirname = path.resolve();
-    const pathImage = "http://localhost:5000/uploads/background/" + file.filename;
+    const pathImage = "uploads/background/" + file.filename;
     sceneDTO={...sceneDTO, img:pathImage} 
     return this._clientProxyScene.send(SceneMSG.CREATE, sceneDTO);
   }

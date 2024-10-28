@@ -43,7 +43,7 @@ async function bootstrap() {
   // app.use(JwtMiddleware);
 
   // Enable All CORS Requests
-  // app.use(cors());
+  app.use(cors());
 
   app.use(json({ limit: '50mb' /* edit this */ }));
   app.use(express.static('public'));

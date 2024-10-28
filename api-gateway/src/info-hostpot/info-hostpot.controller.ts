@@ -46,7 +46,7 @@ export class InfoHostpotController {
   @Post()
   create(@Body() infoHostpotDTO: InfoHostpotDTO/*,@UploadedFile() file: Express.Multer.File*/): Observable<IInfoHostpot> {
     //const __dirname = path.resolve();
-  //  const pathImage = "http://localhost:5000/uploads/infoHostpot/" + file.filename;
+  //  const pathImage = "uploads/infoHostpot/" + file.filename;
  //   infoHostpotDTO={...infoHostpotDTO, img:pathImage} 
     return this._clientProxyInfoHostpot.send(InfoHostpotMSG.CREATE, infoHostpotDTO);  
   }
