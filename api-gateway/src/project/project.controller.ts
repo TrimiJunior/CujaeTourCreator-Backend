@@ -45,7 +45,7 @@ export class ProjectController {
     @UploadedFile() file: Express.Multer.File,
   ): Observable<IProject> {
     const __dirname = path.resolve();
-    const pathImage = 'http://localhost:5000/uploads/cover/' + file.filename;
+    const pathImage = 'uploads/cover/' + file.filename;
     console.log(file.path);
     projectDTO = { ...projectDTO, img: pathImage };
     return this._clientProxyProject.send(ProjectMSG.CREATE, projectDTO);
