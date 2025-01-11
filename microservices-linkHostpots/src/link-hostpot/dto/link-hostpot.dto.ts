@@ -4,6 +4,8 @@ export class LinkHostpotDTO {
   readonly name: string;
   readonly targetSceneId: string;
   readonly position: Array<number>;
+  readonly transparency: number;
+  readonly size: number;
 
 }
 

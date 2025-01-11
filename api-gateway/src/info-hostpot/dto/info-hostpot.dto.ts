@@ -21,4 +21,10 @@ export class InfoHostpotDTO{
     @IsNotEmpty()
     readonly position: Array<number>; 
 
+    @ApiProperty()
+    readonly transparency: number;
+    
+    @ApiProperty()
+    readonly size: number;
+
 }

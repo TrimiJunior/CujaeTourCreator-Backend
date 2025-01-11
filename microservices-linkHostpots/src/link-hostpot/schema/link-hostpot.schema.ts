@@ -6,6 +6,8 @@ export const LinkHostpotSchema = new mongoose.Schema(
     name: { type: String, required: true },
     targetSceneId: { type: String, required: false },
     position: { type: Array, required: true },
+    transparency: {type: Number, required: true},
+    size: {type: Number, required: true},
   },
 
   { timestamps: true },

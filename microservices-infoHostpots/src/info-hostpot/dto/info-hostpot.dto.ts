@@ -4,6 +4,8 @@ export class InfoHostpotDTO {
   readonly name: string;
   readonly info: string;
   readonly position: Array<number>;
+  readonly transparency: number;
+  readonly size: number;
 
 }
 
