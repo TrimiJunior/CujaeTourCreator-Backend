@@ -17,6 +17,7 @@ const dayjs = require('dayjs');
 const helmet = require('helmet');
 const hpp = require('hpp');
 const csrf = require('csurf');
+
 // import { JwtMiddleware } from './auth/strategies/token.check';
 
 ///////DEPS FROM EXPRESS-BRUTE///////////
@@ -37,7 +38,6 @@ async function bootstrap() {
     credentials: true,
   };
   // app.enableCors(option);
-
   app.use(require('express-status-monitor')());
 
   // app.use(JwtMiddleware);
@@ -142,7 +142,6 @@ async function bootstrap() {
   //   handleStoreError,
   // });
   ////////////////////////////////////
-
   const limiter = rateLimit({
     windowMs: 60 * 1000, // 1 minuto
     max: 10000, // límite de solicitudes

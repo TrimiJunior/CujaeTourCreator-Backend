@@ -57,7 +57,7 @@ export class UserController {
     return this._clientProxyUser.send(UserMSG.FIND_ALL, '');
   }
   @Get(':id')
-  @UseGuards(JwtAuthGuard)
+  //@UseGuards(JwtAuthGuard)
   findOne(@Param('id') id: string): Observable<IUser> {
     return this._clientProxyUser.send(UserMSG.FIND_ONE, id);
   }

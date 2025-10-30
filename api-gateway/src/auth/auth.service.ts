@@ -154,7 +154,7 @@ export class AuthService {
       console.log('tokenUser: ', tokenUser);
       return tokenUser;
     } else {
-      throw new Error('Usuario no encontrado');
+      throw new UnauthorizedException('Usuario no encontrado');
     }
   }
 
