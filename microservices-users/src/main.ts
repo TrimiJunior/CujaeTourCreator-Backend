@@ -10,15 +10,11 @@ async function bootstrap() {
     options: {
       urls: [process.env.AMQP_URL],
       queue: RabbitMQ.UserQueue,
-      queueOptions: {
-    durable: true,
-  },
     },
   });
   //app.useGlobalFilters(new AllExceptionFilter());
   //app.useGlobalInterceptors(new TimeOutInterceptor());
   //app.useGlobalPipes(new ValidationPipe());
-  console.log('Conectando a RabbitMQ en:', process.env.AMQP_URL);
   await app.listen();
   console.log("Microservices users is listening")
 }

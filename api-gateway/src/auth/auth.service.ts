@@ -128,7 +128,7 @@ export class AuthService {
       .send(UserMSG.VALID_USER, userBody)
       .toPromise();
 
-    console.log('requiest: ', user);
+    console.log('requiest:', user);
 
     if (user) {
       const payload = {

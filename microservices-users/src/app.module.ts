@@ -11,7 +11,7 @@ import { UserModule } from './user/user.module';
       envFilePath: ['.env.development'],
       isGlobal: true,
     }),MongooseModule.forRoot(process.env.URI_MONGODB, {
-     /* useCreateIndex: true,
+      /* useCreateIndex: true,
       useFindAndModify: false,*/
     }),
     UserModule,
