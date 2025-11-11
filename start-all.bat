@@ -3,4 +3,5 @@ start cmd /k "cd microservices-linkHostpots && npm start"
 start cmd /k "cd microservices-projects && npm start"
 start cmd /k "cd microservices-scenes && npm start"
 start cmd /k "cd microservices-users && npm start"
+start cmd /k "cd microservices-maps && npm start"
 

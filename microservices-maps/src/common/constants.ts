@@ -1,0 +1,14 @@
+export enum RabbitMQ {
+  MapQueue = 'maps',
+}
+
+export enum MapMSG {
+  CREATE = 'CREATE_MAP',
+  FIND_BY_PROJECT = 'FIND_MAPS_BY_PROJECT',
+  FIND_ONE = 'FIND_MAP',
+  UPDATE = 'UPDATE_MAP',
+  DELETE = 'DELETE_MAP',
+  ADD_MARKER = 'ADD_MARKER',
+  UPDATE_MARKER = 'UPDATE_MARKER',
+  DELETE_MARKER = 'DELETE_MARKER',
+}

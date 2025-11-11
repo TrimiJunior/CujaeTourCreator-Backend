@@ -4,6 +4,7 @@ export enum RabbitMQ {
   SceneQueue = 'scenes',
   LinkHostpotQueue = 'linkHostpots',
   InfoHostpotQueue = 'infoHostpots',
+  MapQueue = 'maps',
 }
 
 export enum UserMSG {
@@ -82,3 +83,14 @@ export enum InfoHostpotMSG {
 }
 
 export const invalidTokens = new Set<string>();
+
+export enum MapMSG {
+  CREATE = 'CREATE_MAP',
+  FIND_BY_PROJECT = 'FIND_MAPS_BY_PROJECT',
+  FIND_ONE = 'FIND_MAP',
+  UPDATE = 'UPDATE_MAP',
+  DELETE = 'DELETE_MAP',
+  ADD_MARKER = 'ADD_MARKER',
+  UPDATE_MARKER = 'UPDATE_MARKER',
+  DELETE_MARKER = 'DELETE_MARKER',
+}

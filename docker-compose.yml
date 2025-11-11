@@ -73,6 +73,20 @@ services:
     networks:
       - ms_nestjs     
   
+  microservices-maps:
+    image: microservices-maps:v1
+    container_name: microservices-maps
+    build:
+      context: ./microservices-maps
+      dockerfile: Dockerfile
+    env_file: .env  
+    depends_on:
+      - mongodb
+      - rabbitmq
+    restart: always
+    networks:
+      - ms_nestjs     
+  
   rabbitmq:
     image: docker.uclv.cu/rabbitmq:3-management
     container_name: rmq

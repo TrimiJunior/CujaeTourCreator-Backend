@@ -8,6 +8,7 @@ import { ProjectModule } from './project/project.module';
 import { SceneModule } from './scene/scene.module';
 import { LinkHostpotModule } from './link-hostpot/link-hostpot.module';
 import { InfoHostpotModule } from './info-hostpot/info-hostpot.module';
+import { MapModule } from './map/map.module';
 import {BruteMiddleware} from './middlewares/limiter/brute-middle';
 
 
@@ -22,7 +23,8 @@ import {BruteMiddleware} from './middlewares/limiter/brute-middle';
     ProjectModule,
     SceneModule,
     LinkHostpotModule,
-    InfoHostpotModule
+  InfoHostpotModule,
+  MapModule,
   ],
   controllers: [AppController],
   providers: [AppService],
